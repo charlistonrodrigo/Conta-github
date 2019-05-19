@@ -11,7 +11,7 @@ public class Deposito {
 
         Transporte obj = new Transporte();
 
-        int  opçao, estoque_jatiboca, estoque_pontal, ent_est_jatiboca,   ent_est_pontal,sai_est_jatiboca,sai_est_pontal;
+        int  i, num ,opçao, estoque_jatiboca, estoque_pontal, ent_est_jatiboca,   ent_est_pontal,sai_est_jatiboca,sai_est_pontal;
 
          Scanner ler = new Scanner(System.in);
 
@@ -21,13 +21,11 @@ public class Deposito {
         ent_est_pontal = 0;
         sai_est_jatiboca = 0;
         sai_est_pontal = 0;
+        i = 1;
 
-
-
-    	System.out.println(" INFORME QUAL O VALOR DE     : " );
-
-
-
+         while (i != 0){
+        System.out.println(" INFORME QUAL O VALOR DE I: " );
+        i = ler.nextInt();
     	System.out.println(" " );
 
     	System.out.println("              MENU           " );
@@ -40,39 +38,55 @@ public class Deposito {
     	System.out.println(" 5- FINALIZAR  : " );
         System.out.println(" ");
 
-    	opçao = ler.nextInt();
+        opçao = ler.nextInt();
 
-
-
-
-    	switch (opçao)
+        switch (opçao)
     	{
 
     		case 1:
-                      for ( int i = 0; i < 3; i++){
+
 
     			     System.out.println(" INFORME QUAL A QUANTIDADE DE AÇUCAR    : " );
 
       	           	 obj.ent_est_jatiboca = ler.nextInt();
-                    // obj.estoque_inicial_jatiboca();
 
-    				System.out.println( " ESTOQUE :" + obj.estoque_inicial_jatiboca() );
-    				//estoque_inicial_jatiboca()
-                      }
+    				 System.out.println( " ESTOQUE1:" + obj.estoque_inicial_jatiboca() );
+
 
 
     		    break;
 
     		case 2:
 
-    		    break;
+    			    System.out.println(" INFORME QUAL A QUANTIDADE DE AÇUCAR    : " );
+
+      	           	obj.sai_est_jatiboca = ler.nextInt();
+
+    				System.out.println( " ESTOQUE2 :" + obj.estoque_saida_jatiboca() );
+
+
+                 break;
 
     	    case 3:
+
+    	    	      System.out.println(" CASO QUEIRA TRANSFERENCIA DE JATIBOCA PARA PORTAL, DIGITE 1   : " );
+    	    	      num = ler.nextInt();
+    	    	     if (num == 1){
+    	    	     	obj.sai_est_jatiboca = ler.nextInt();
+                       	System.out.println( " ESTOQUE PONTAL :" + obj.transfere_jatiboca( ));
+
+
+
+    	    	     }
 
                 break;
 
 
     		case 4:
+
+                   System.out.println(" RESULTADO : " + obj.estoque_jatiboca);
+                   System.out.println( " ESTOQUE PONTAL :" + obj.estoque_pontal);
+
 
                 break;
 
@@ -81,7 +95,9 @@ public class Deposito {
 
                 break;
     		// default : System.out.println(" OPÇAO INVALIDA " );
-
+    	}
      	}
+
+
     }
 }
