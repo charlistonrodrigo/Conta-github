@@ -1,3 +1,5 @@
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/charlistonrodrigo/Conta-github/blob/add-license-1/LICENCE)
+
 # Conta-github
 
 ## Sobre
